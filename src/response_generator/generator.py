@@ -47,3 +47,6 @@ class ResponseGenerator:
         campaign_id = self.db.insert_campaign(response.get("body"), response.get("images"))
         response["campaign_id"] = campaign_id
         return response
+
+    def build_response(self, answer: str):
+        return answer

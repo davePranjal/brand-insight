@@ -12,6 +12,7 @@ class RequestProcessor:
         self.openai_data_fetcher = OpenAIDataFetcher()
         self.response_generator = ResponseGenerator()
         self.image_processor = ImageProcessor(OpenAIClient())
+        self.context = {}
 
     def process_request(self, prompt: str, brand_urls: list):
         """
@@ -33,13 +34,13 @@ class RequestProcessor:
 
         return self.response_generator.build_response(campaign_text, images_with_tags)
 
-    def answer_brand_question(self, question: str, brand_urls: Optional[list] = None,
+    def answer_brand_question(self, questions: list, brand_urls: Optional[list] = None,
                               use_previous_context: bool = False) -> str:
         """
         Answers questions about a brand using context from provided URLs or previous interactions.
 
         Args:
-            question (str): The question to answer.
+            questions (list): The questions to answer.
             brand_urls (list, optional): List of URLs for context.
             use_previous_context (bool, optional): Whether to use previously stored context. Defaults to False.
 
@@ -48,16 +49,14 @@ class RequestProcessor:
         """
 
         # If using previous context and it's available, fetch it
-        if use_previous_context and self.openai_client.has_context():
-            brand_urls = self.openai_client.get_context()["brand-info"]
+        if use_previous_context and self.context:
+            brand_urls = self.context["brand-info"]
 
         # Update or retrieve context
         if brand_urls:
-            self.openai_client.update_context(brand_urls)
+            self.context.update({"brand-info": brand_urls})
 
-        # Generate answer from OpenAI
-        answer = self.openai_client.generate_text(
-            question, brand_urls, questions=[question]
-        )["campaign"]["body"]
-
-        return answer
+        # Generate answer from
+        brand_urls = [url_parser.parse_webpage(url) for url in brand_urls]
+        answer = self.openai_data_fetcher.get_brand_answers(brand_urls, questions)
+        return self.response_generator.build_response(answer)

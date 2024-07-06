@@ -12,4 +12,4 @@ class CampaignResponse(BaseModel):
 
 
 class BrandQuestionResponse(BaseModel):
-    answer: str
+    response: str

@@ -8,8 +8,8 @@ class CampaignRequest(BaseModel):
 
 
 class BrandQuestionRequest(BaseModel):
-    question: str = Field(..., description="The question to be answered about the brand.")
-    brand_urls: Optional[List[HttpUrl]] = Field(
+    questions: list = Field(..., description="The questions to be answered about the brand.")
+    brand_urls: Optional[List[str]] = Field(
         None, description="Optional list of URLs for context."
     )
     use_previous_context: bool = Field(

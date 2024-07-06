@@ -32,9 +32,9 @@ async def create_ad_campaign(request: CampaignRequest):
 async def answer_brand_question(request: BrandQuestionRequest):
     try:
         # Process the question and generate the answer
-        answer = request_processor.answer_brand_question(
-            request.question, request.brand_urls, request.use_previous_context
+        response = request_processor.answer_brand_question(
+            request.questions, request.brand_urls, request.use_previous_context
         )
-        return BrandQuestionResponse(answer=answer)
+        return BrandQuestionResponse(response=response)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

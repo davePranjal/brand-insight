@@ -5,34 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca4d4d54-a907-4d48-b4fb-db013882d101" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api_layer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api_layer/request_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api_layer/response_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/openai_data_fetcher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/relevance_filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image_processor/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image_processor/processor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/openai_client/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/response_generator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/response_generator/generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service_layer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service_layer/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/cache.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/id_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/url_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fibr_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fibr_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api_layer/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_layer/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api_layer/request_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_layer/request_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api_layer/response_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api_layer/response_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/openai_data_fetcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/openai_data_fetcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/openai_client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/openai_client/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/response_generator/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/response_generator/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service_layer/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/service_layer/service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,12 +198,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/service_layer/service.py</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/service_layer/service.py</url>
-          <line>33</line>
+          <line>34</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -248,7 +228,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/service_layer/service.py</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -285,6 +265,46 @@
           <url>file://$PROJECT_DIR$/src/database/db.py</url>
           <line>25</line>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>178</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>179</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>180</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>181</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>115</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/openai_client/client.py</url>
+          <line>116</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

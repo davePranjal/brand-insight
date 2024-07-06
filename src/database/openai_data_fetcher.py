@@ -19,10 +19,8 @@ class OpenAIDataFetcher:
         return campaign_text
 
     def get_brand_answers(self, brand_info: list, questions: list):
-        prompt = "Answer these questions using the brand context provided through the brand urls"
+        prompt = "Answer these questions using the brand context provided through the brand urls. Return each question, in a new line, followed by its answer, in a new line"
         answers = self.openai_client.generate_text(prompt=prompt, brand_info=brand_info, questions=questions)
         if not self.pg_filter.apply(answers):
             raise Exception("Inappropriate Content")
-        if not self.relevance_filter.apply(answers):
-            raise Exception("Irrelevant Content")
         return answers
