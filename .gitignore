@@ -1,0 +1,9 @@
+.idea/fibr_project.iml
+.idea/workspace.xml
+__pycache__/config.cpython-311.pyc
+src/__pycache__/__init__.cpython-311.pyc
+src/api_layer/__pycache__/__init__.cpython-311.pyc
+src/api_layer/__pycache__/api.cpython-311.pyc
+src/api_layer/__pycache__/request_model.cpython-311.pyc
+src/api_layer/__pycache__/response_model.cpython-311.pyc
+**/__pycache__/**
