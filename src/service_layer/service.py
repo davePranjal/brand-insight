@@ -16,17 +16,15 @@ class RequestProcessor:
 
     def process_request(self, prompt: str, brand_urls: list):
         """
-        Processes the ad campaign request, generates a tagline, and associated images.
+        Processes the ad campaign request, generates campaign text, and associated images.
 
         Args:
             prompt (str): The prompt describing the ad campaign goal.
             brand_urls (list): List of URLs related to the brand.
 
         Returns:
-            tuple: (tagline, list of image data/URLs)
+            dict: {campaign_id, campaign_text, images}
         """
-
-        # Update OpenAI context
         brand_urls = [url_parser.parse_webpage(url) for url in brand_urls]
         list_of_image_urls = utils.flatten_list([url.get("images") for url in brand_urls])
         images_with_tags = [self.image_processor.get_image_with_tags(url) for url in list_of_image_urls]
@@ -47,16 +45,12 @@ class RequestProcessor:
         Returns:
             str: The answer to the question.
         """
-
-        # If using previous context and it's available, fetch it
         if use_previous_context and self.context:
             brand_urls = self.context["brand-info"]
 
-        # Update or retrieve context
         if brand_urls:
             self.context.update({"brand-info": brand_urls})
 
-        # Generate answer from
         brand_urls = [url_parser.parse_webpage(url) for url in brand_urls]
         answer = self.openai_data_fetcher.get_brand_answers(brand_urls, questions)
         return self.response_generator.build_response(answer)

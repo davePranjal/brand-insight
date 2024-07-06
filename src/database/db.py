@@ -10,11 +10,10 @@ from src.utils.id_utils import generate_alphanumeric_id
 class CampaignDB:
     def __init__(self, db_name="ad_campaigns", collection_name="campaigns"):
         db_url = os.environ.get("MONGO_DB_URL")
-        self.client = MongoClient(db_url)  # Connect to your local MongoDB instance
+        self.client = MongoClient(db_url)
         self.db = self.client[db_name]
         self.collection = self.db[collection_name]
 
-        # Create an index on campaign_id (if not exists) for efficient lookup
         self.collection.create_index([("campaign_id", ASCENDING)], unique=True)
 
     def insert_campaign(self, campaign_text, images):

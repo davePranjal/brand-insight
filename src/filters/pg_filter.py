@@ -16,14 +16,11 @@ class PGFilter(Filter):
 
         Returns:
             bool: True if the text passes the filter, False otherwise.
-            list: (Optional) List of detected prohibited categories if the text fails.
         """
-
-        # Check for profanity and vulgarity
         message = f"""Given the following text:
                 '{text}'
 
-               Identify any mentions of the following prohibited categories {self.prohibited_categories} text. 
+               Identify any mentions of the following prohibited categories {self.prohibited_categories} in the text. 
                If you are unsure whether a mentioned category is a present, err on the side of including it.
                Return yes if the text contains words from of the prohibited categories and no otherwise."""
         prompt = "You are an expert in identifying intent and words in a text."

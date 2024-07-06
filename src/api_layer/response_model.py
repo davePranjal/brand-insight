@@ -1,5 +1,5 @@
-from typing import List, Optional
-from pydantic import BaseModel, HttpUrl, Field
+from typing import List
+from pydantic import BaseModel, Field
 
 
 class CampaignResponse(BaseModel):

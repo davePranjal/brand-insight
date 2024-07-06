@@ -1,8 +1,3 @@
-import openai
-from PIL import Image
-import requests
-from io import BytesIO
-
 from src.openai_client.client import OpenAIClient
 
 

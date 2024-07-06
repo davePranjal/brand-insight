@@ -1,12 +1,7 @@
 from datetime import datetime
 
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import BaseModel, Field
 from typing import List
-
-
-class Image(BaseModel):
-    url: HttpUrl  # Ensures the URL is valid
-    description: str
 
 
 class Campaign(BaseModel):

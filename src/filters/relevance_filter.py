@@ -7,7 +7,16 @@ class RelevanceFilter(Filter):
         self.openai_api_client = openai_api_client
 
     def apply(self, text, **kwargs):
-        """Checks if a text mentions rival brands using OpenAI."""
+        """
+           Checks if a text mentions rival brands.
+
+           Args:
+               text: The text to be filtered.
+               brand_name: The name of the brand of the campaign
+
+           Returns:
+               bool: True if the text passes the filter, False otherwise.
+        """
         brand_name = kwargs.get("brand_name")
         message = f"""Given the following brand: '{brand_name}' and a piece of text:
 
@@ -24,4 +33,3 @@ class RelevanceFilter(Filter):
             return True
         else:
             return False
-
